@@ -1,0 +1,39 @@
+plugins {
+    id 'groovy-gradle-plugin'
+}
+
+group = 'com.vomiter'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    gradlePluginPortal()
+    mavenCentral()
+}
+
+gradlePlugin {
+    plugins {
+        devRuntime {
+            id = "com.vomiter.dev-runtime"
+            implementationClass = "com.vomiter.DevRuntimePlugin"
+        }
+        langMerge {
+            id = "com.vomiter.langmerge"
+            implementationClass = "com.vomiter.LangMergePlugin"
+        }
+        forgeBase {
+            id = "com.vomiter.forge-base"
+            implementationClass = "com.vomiter.ForgeBasePlugin"
+        }
+
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
