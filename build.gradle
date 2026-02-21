@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.vomiter'
-version = "0.1.0"
+version = "0.2.0"
 
 repositories {
     gradlePluginPortal()
@@ -25,6 +25,10 @@ gradlePlugin {
         forgeBase {
             id = "com.vomiter.forge-base"
             implementationClass = "com.vomiter.ForgeBasePlugin"
+        }
+        neoforgeBase{
+            id = "com.vomiter.neoforge-base"
+            implementationClass = "com.vomiter.NeoForgeBasePlugin"
         }
 
     }
